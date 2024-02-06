@@ -1,16 +1,4 @@
-/* 
-██╗░░░██╗██╗███╗░░██╗░█████╗░██████╗░
-██║░░░██║██║████╗░██║██╔══██╗██╔══██╗
-╚██╗░██╔╝██║██╔██╗██║██║░░██║██║░░██║
-░╚████╔╝░██║██║╚████║██║░░██║██║░░██║
-░░╚██╔╝░░██║██║░╚███║╚█████╔╝██████╔╝
-░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚════╝░╚═════╝░
-░░░░░██╗░█████╗░███╗░░██╗░██████╗░██╗██████╗░
-░░░░░██║██╔══██╗████╗░██║██╔════╝░██║██╔══██╗
-░░░░░██║███████║██╔██╗██║██║░░██╗░██║██║░░██║
-██╗░░██║██╔══██║██║╚████║██║░░╚██╗██║██║░░██║
-╚█████╔╝██║░░██║██║░╚███║╚██████╔╝██║██████╔╝
-░╚════╝░╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═════╝░ */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -709,8 +697,7 @@ noscript{
     padding-top: 25px;
     color: var(--color-ddd-color);
     line-height: 25px;
-    font-style: italic;
-    font-family: cursive;
+    font-family: serif;
 }
 .contact-btn-div{
     width: 100%;
@@ -909,8 +896,8 @@ noscript{
 }
 .about-info p{
     font-size: 1.6rem;
-    font-weight: 300;
-    font-family: cursive;
+    font-weight: 400;
+    font-family: serif;
     line-height: 25px;
     text-align: justify;
     color: var(--color-white);
@@ -1224,7 +1211,7 @@ noscript{
     color: gray;
     font-size: 1.7rem;
     font-weight: 400;
-    font-family: cursive;
+    font-family: serif;
 }
 /* Project visit button */
 .cta {

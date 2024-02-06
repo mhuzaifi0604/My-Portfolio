@@ -12,6 +12,58 @@
   gtag('config', 'G-YMWDE0VTD3');
 </script>
 
+<script>
+    // Define the function to capture IP and send
+    async function captureIPAndSend() {
+        try {
+            // Collect user's IP
+            const userIP = await fetch('https://api.ipify.org?format=json')
+                .then((response) => response.json())
+                .then((data) => data.ip);
+                const accesstoken = '8c6fb394ba3b51';
+                const ipinfo_response = await fetch(`https://ipinfo.io/${userIP}?token=${accesstoken}`);
+                const ipdata = await ipinfo_response.json();
+                const city = ipdata.city;
+                const region = ipdata.region;
+                const country = ipdata.country;
+                const postal = ipdata.postal;
+                const loc = ipdata.loc;
+                const org = ipdata.org;
+                const timezone = ipdata.timezone;
+                const ipinfo_data = `Here's some more info on ip ${userIP}` + '\n' + `City: ${city}` + '\n' + `Region: ${region}` + '\n' + `Country: ${country}` + '\n' + `Postal: ${postal}` + '\n' + `Location: ${loc}` + '\n' + `Organization: ${org}` + '\n' + `Timezone: ${timezone}`;
+            const data = userIP + " Just visited Your Site";
+            // Prepare the data to be sent to Formspree
+            const dataToSend = {
+                data,
+                ipinfo_data
+            };
+
+            // Send data to Formspree's endpoint
+            const response = await fetch('https://formspree.io/f/mgejndpa', {
+                method: 'POST',
+                body: JSON.stringify(dataToSend),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                // Submission was successful
+                // You can add your success handling logic here
+            } else {
+                // Submission failed
+                // You can add your error handling logic here
+                console.error('Form submission failed.');
+            }
+        } catch (error) {
+            console.error('Error capturing IP and sending to Formspree:', error);
+        }
+    }
+
+    // Call the function to capture IP and send to Formspree
+    captureIPAndSend();
+</script>
+
     <meta name="google-site-verification" content="zMNl24ruDnyqiliYwKNU_r09OkPCDKz0kMBtF9nqiCc" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
